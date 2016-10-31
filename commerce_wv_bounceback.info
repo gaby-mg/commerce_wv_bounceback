@@ -1,0 +1,6 @@
+name = World Vision Bounceback
+description = Provides Specific Configuration for Drupal Commerce E-Cards
+package = Commerce
+dependencies[] = commerce_checkout
+core = 7.x
+
