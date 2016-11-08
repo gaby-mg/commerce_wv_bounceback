@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_init()
+ *
+ * Load JS file for bounceback
+ */
+function commerce_wv_bounceback_init() {
+  drupal_add_js(drupal_get_path('module', 'commerce_wv_bounceback') . '/js/commerce_wv_bounceback.js');
+}
+
+/**
+ * Implements hook_commerce_checkout_pane_info()
+ */
+function commerce_wv_bounceback_commerce_checkout_pane_info() {
+  $checkout_panes = array();
+
+  $checkout_panes['review_your_ecard'] = array(
+    'title' => t('Review Your e-Card'),
+    'file'  => 'includes/commerce_wv_bounceback.checkout_pane.inc',
+    'page'  => 'checkout',
+  );
+
+  return $checkout_panes;
+}
